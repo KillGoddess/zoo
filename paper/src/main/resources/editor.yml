@@ -1,0 +1,10 @@
+# 支持: https://discord.gg/badbones-s-live-chat-182615261403283459
+# Github: https://github.com/Crazy-Crew
+# 
+# 问题反馈: https://github.com/Crazy-Crew/CrazyCrates/issues
+# 功能建议: https://github.com/Crazy-Crew/CrazyCrates/issues
+# 
+# 所有音效列表: https://minecraft.wiki/w/Sounds.json#Java_Edition_values
+editor:
+  # 如果设置为 true，当你在 /crazycrates editor 中时...任何现有的箱子位置将在右键点击时被覆盖。
+  overwrite-old-crate-locations: false

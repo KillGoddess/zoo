@@ -1,0 +1,278 @@
+# 支持: https://discord.gg/badbones-s-live-chat-182615261403283459
+# Github: https://github.com/Crazy-Crew
+#
+# Issues: https://github.com/Crazy-Crew/CrazyCrates/issues
+# Features: https://github.com/Crazy-Crew/CrazyCrates/issues
+#
+# 所有消息默认支持 {prefix}（除非特别说明）。
+#
+misc:
+  # 可用占位符: {command}
+  unknown-command: "{prefix}<red>{command} 不是已知的命令。"
+  # 打开箱子时使用末影珍珠触发
+  no-teleporting: "{prefix}<red>打开箱子时无法传送。"
+  no-commands: "{prefix}<red>打开箱子时不能使用命令。"
+  # 可用占位符: {key}, {crate}
+  no-keys: "{prefix}<red>你必须手持 {key} <red>才能使用 <gold>{crate}。"
+  # 可用占位符: {crate}
+  no-virtual-keys: "{prefix}<red>你需要虚拟钥匙才能打开 <gold>{crate}。"
+  # 可用占位符: {usage}
+  correct-usage: "{prefix}<red>此命令正确用法为 <yellow>{usage}"
+  feature-disabled: "{prefix}<red>该功能已被禁用。"
+  # 可用占位符: {flag}, {usage}
+  lacking-flag: "{prefix}<red>命令缺少 {flag}，期望格式: {usage}"
+# 错误相关消息
+errors:
+  # 可用占位符: {crate}
+  no-prizes-found: "{prefix}<red>该箱子内没有你能获得的奖励。"
+  # 可用占位符: {prize}
+  prize-not-found: "{prefix}<red>未找到名为 {prize} 的奖励。"
+  no-schematics-found: "{prefix}<red>未找到结构文件。请确认 schematics 文件夹中存在 .nbt 文件；若没有，请删除该文件夹以重新生成。"
+  internal-error: "{prefix}<red>发生内部错误，请查看控制台获取详细信息。"
+  # 可用占位符: {crate}
+  key-refund: "{prefix}<red>你正在打开的箱子 {crate} 发生错误，已退还钥匙。"
+  # 可用占位符: {value}
+  cannot-be-empty: "{prefix}<red>{value} 不能为空！"
+  cannot-be-air: "{prefix}<red>你不能使用空气啦~"
+  # 可用占位符: {crate}
+  prize-error: "{prefix}<red>发放 <gold>{crate}<red> 箱子奖励时出现错误，请联系服主并提供该报错。"
+# 玩家相关消息
+player:
+  requirements:
+    must-be-player: "{prefix}<red>只有玩家才能使用该命令。"
+    must-be-console-sender: "{prefix}<red>该命令只能由控制台使用。"
+    must-be-looking-at-block: "{prefix}<red>你必须看向一个方块。"
+  # 可用占位符: {player}
+  target-not-online: "{prefix}<red>{player} <gray>不在线。"
+  target-same-player: "{prefix}<red>你不能对自己使用该命令。"
+  no-permission: "{prefix}<red>你没有权限使用该命令/菜单！"
+  # 可用占位符: {crate}
+  inventory-not-empty: "{prefix}<red>背包未清空，请先整理后再打开 <gold>{crate}。"
+  # 可用占位符: {amount}, {keytype}, {key}
+  obtaining-keys: "{prefix}<gray>你已获得 <gold>{amount} {key} <gray>钥匙。"
+  # 可用占位符: {player}
+  too-close-to-another-player: "{prefix}<red>你距离正在开箱的玩家太近了。"
+# 箱子相关消息
+crates:
+  requirements:
+    # 可用占位符: {crate}
+    not-a-crate: "{prefix}<red>不存在名为 <gold>{crate} <red>的箱子。"
+    # 可用占位符: {key}
+    not-a-key: "{prefix}<red>不存在名为 <gold>{key} <red>的钥匙。"
+    # 可用占位符: {number}
+    not-a-number: "{prefix}<gold>{number} <red>不是数字。"
+    # 可用占位符: {amount}, {required_amount}, {crate}, {key}
+    not-enough-keys: "{prefix}<gray>打开 <red>{crate} <gray>需要 <red>{key_amount} <gray>把钥匙，你只有 <red>{amount}。"
+  not-a-block: "{prefix}<red>你必须站在方块上才能使用 <gold>{crate}。"
+  # 可用占位符: {crate}
+  out-of-time: "{prefix}<red>你花了 <gold>5 分钟 <red>仍未打开 <gold>{crate}<red>，已自动关闭。"
+  forced-out-of-preview: "{prefix}<red>重载导致你被强制退出预览。"
+  cannot-set-menu-type: "{prefix}<red>箱子菜单已禁用，无法设置为方块菜单。"
+  # 可用占位符: {crate}
+  crate-no-permission: "{prefix}<red>你没有权限使用 {crate}。"
+  # 可用占位符: {crate}
+  crate-preview-disabled: "{prefix}<red><gold>{crate} <red>的预览功能已禁用。"
+  # 可用占位符: {crate}
+  crate-already-open: "{prefix}<red>你已经在打开 <gold>{crate}。"
+  # 可用占位符: {crate}
+  crate-in-use: "{prefix}<red>{crate} 正在被使用，请稍候。"
+  already-redeemed-prize: "{prefix}<red>你已领取过该奖励！"
+  # 可用占位符: {crate}, {cratetype}
+  cannot-be-a-virtual-crate: "{prefix}<gold>{crate} <red>不能作为虚拟箱子使用。"
+  # QuadCrate 结构需要一定空间
+  need-more-room: "{prefix}<red>此处空间不足，无法打开该箱子。"
+  # 可用占位符: {world}
+  world-disabled: "{prefix}<red>很抱歉，{world} 已禁用箱子功能。"
+  editor:
+    # 可用占位符: {crate}
+    enter: "{prefix}<red>你已进入编辑模式。"
+    # 可用占位符: {crate}
+    exit: "{prefix}<red>你已退出编辑模式。"
+    # 可用占位符: {reason}
+    force-exit: "{prefix}<red>你已因 {reason} 被强制退出编辑模式。"
+  physical-crate:
+    # 可用占位符: {crate}
+    created:
+      - "{prefix}<gray>你已将该方块设置为 {crate}。"
+      - "<gray>移除方式：创造模式下按住 Shift 破坏。"
+    # 可用占位符: {crate}
+    exists: "{prefix}<gray>此位置已存在名为 <gold>{crate} <gray>的箱子，ID: <gold>{id}。"
+    # 可用占位符: {id}
+    removed: "{prefix}<gray>你已移除 <gold>{id}。"
+  list:
+    # /crazycrates list 命令的格式
+    format:
+      - "<bold><gold>━━━━━━━━━━━━━━━━━━━ 箱子统计 ━━━━━━━━━━━━━━━━━━━</gold></bold>"
+      - "<dark_gray>»</dark_gray> <green>可用箱子："
+      - " ⤷ {active_crates}</green>"
+      - "<dark_gray>»</dark_gray> <red>损坏箱子："
+      - " ⤷ {broken_crates}</red>"
+      - "<dark_gray>»</dark_gray> <yellow>箱子位置："
+      - " ⤷ {active_locations}</yellow>"
+      - ""
+      - "{locations}"
+      - ""
+      - "<bold><gold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</gold></bold>"
+    # 可用占位符: {id}, {crate_name}, {world}, {x}, {y}, {z}
+    per-crate: "<dark_gray>[<blue>{id}<dark_gray>]: <red>{crate_name}<dark_gray>, <red>{world}<dark_gray>, <red>{x}<dark_gray>, <red>{y}<dark_gray>, <red>{z}"
+  teleport:
+    # 可用占位符: {name}
+    success: "<red>你已传送到名为 <gold>{name}<red> 的位置。"
+    # 可用占位符: {id}
+    failed: "{prefix}<red>没有名为 <gold>{id}<red> 的位置。"
+  pulls:
+    # 当奖品达到最大抽取次数时显示
+    # 若此消息为空，将不会写入奖品 lore。
+    #
+    # 可用占位符: {maxpulls}, {pulls}
+    max: "{prefix}<red>该奖励已无法获得，{pulls}/{maxpulls}"
+  respins:
+    # 可用占位符: {status}
+    max: "{prefix}<red>你无法继续重抽，状态：{status}"
+    # 玩家加入时发送，显示已领取重抽奖励数量
+    #
+    # 若有多个未领取奖励且超过上限，则数量会递增
+    # 若找到奖励且未达到上限，会提前结束以避免弹出多个 GUI
+    #
+    # 可用占位符: {amount}
+    claimed: "{prefix}<red>你已领取 {amount} 个重抽奖励！"
+    # 玩家执行 /crazycrates claim <crate> 时发送
+    #
+    # 用于在打开重抽菜单前领取最新奖励
+    #
+    # 可用占位符: {prize}, {crate}, {crate_pretty}
+    redeemed: "{prefix}<red>你已领取 {crate} 箱子中的奖励：{prize}！"
+    # 可用占位符: {prize}, {crate}, {crate_pretty}
+    not-claimed: "{prefix}<red>若未收到奖励，请执行 /crazycrates claim {crate}"
+    # 可用占位符: {crate}, {crate_pretty}
+    empty: "{prefix}该箱子 {crate} 没有可领取的奖励。"
+    # 若玩家有重抽权限，则此格式会显示在 {status} 位置
+    #
+    # 可用占位符: {respins_left}/{respins_total}
+    format: "{respins_left}/{respins_total}"
+    # 用于 {status} 的空值
+    none: "N/A"
+# 命令相关消息
+command:
+  open:
+    # 可用占位符: {crate}, {player}
+    opened-a-crate: "{prefix}<gray>你已为 <gold>{player} <gray>打开 {crate}。"
+  give:
+    # 可用占位符: {amount}, {player}, {keytype}, {key}
+    given-player-keys: "{prefix}<gray>你已给予 <gold>{player} {amount} <gray>把钥匙。"
+    # 可用占位符: {amount}, {amount}, {keytype}, {key}
+    full-inventory: "{prefix}<gray>背包已满，已给予你 <gold>{amount} {key} <gray>把虚拟钥匙。"
+    # 可用占位符: {amount}, {keytype}, {key}
+    given-everyone-keys: "{prefix}<gray>你已给予所有玩家 <gold>{amount} <gray>把钥匙。"
+    # 可用占位符: {amount}, {player}, {keytype}
+    given-offline-player-keys: "{prefix}<gray>你已给予离线玩家 <gold>{player} <gray>{amount} 把钥匙。"
+  take:
+    # 可用占位符: {amount}, {player}, {keytype}
+    take-player-keys: "{prefix}<gray>你从 <gold>{player} <gray>那里拿走了 <gold>{amount} <gray>把钥匙。"
+    # 可用占位符: {player}
+    cannot-take-keys: "{prefix}<gray>无法从 <gold>{player} <gray>那里拿走钥匙（对方太穷了）。"
+    # 可用占位符: {amount}, {player}, {keytype}
+    take-offline-player-keys: "{prefix}<gray>你从离线玩家 <gold>{player} <gray>那里拿走了 <gold>{amount} <gray>把钥匙。"
+  additem:
+    # 可用占位符: {crate}
+    no-item-in-hand: "{prefix}<red>你需要手持物品才能添加到 {crate}。"
+    # 可用占位符: {crate}, {prize}
+    add-item-from-hand: "{prefix}<gray>物品已添加到 {crate} 的奖励 #{prize}。"
+  migrate:
+    # 可用占位符: {file}, {type}, {reason}
+    error: "{prefix}<red>无法使用 <green>{type} <red>迁移 <green>{file}<red>，原因：<green>{reason}。"
+    # 可用占位符: {prefix}
+    not-available: "{prefix}<green>该迁移类型不可用。"
+    # 可用占位符: {name}
+    plugin-not-available: "{prefix}<green>插件 <red>{name} <green>未启用，无法迁移！"
+    no-crates-available: "{prefix}<green>没有可迁移的箱子！"
+    success-users:
+      - "<bold><gold>━━━━━━━━━━━━━━━━━━━ 迁移统计 ━━━━━━━━━━━━━━━━━━━</gold></bold>"
+      - "<dark_gray>»</dark_gray> <green>成功转换："
+      - " ⤷ {succeeded_amount}</green>"
+      - "<dark_gray>»</dark_gray> <red>失败转换："
+      - " ⤷ {failed_amount}</red>"
+      - ""
+      - "<red>耗时：<yellow>{time}"
+      - "<red>迁移类型：<yellow>{type}"
+      - ""
+      - "<bold><gold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</gold></bold>"
+    # 可用占位符: {type}, {files}
+    #
+    # {files} 会在从其他插件迁移时输出多个箱子
+    success:
+      - "<bold><gold>━━━━━━━━━━━━━━━━━━━ 迁移统计 ━━━━━━━━━━━━━━━━━━━</gold></bold>"
+      - "<dark_gray>»</dark_gray> <green>成功转换："
+      - " ⤷ {succeeded_amount}</green>"
+      - "<dark_gray>»</dark_gray> <red>失败转换："
+      - " ⤷ {failed_amount}</red>"
+      - ""
+      - "<red>耗时：<yellow>{time}"
+      - "<red>迁移类型：<yellow>{type}"
+      - ""
+      - "<red>已转换文件："
+      - "{files}"
+      - ""
+      - "<bold><gold>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</gold></bold>"
+  reload:
+    completed: "{prefix}<dark_aqua>你已重载配置与数据文件。"
+  transfer:
+    not-enough-keys: "{prefix}<red>你没有足够的钥匙进行转移。"
+    # 可用占位符: {amount}, {player}, {keytype}, {crate}
+    transferred-keys: "{prefix}<gray>你已将 {amount} 把 {crate} 钥匙转给 {player}。"
+    # 可用占位符: {amount}, {player}, {keytype}, {crate}
+    transferred-keys-received: "{prefix}<gray>你已从 {player} 那里收到 {amount} 把 {crate} 钥匙。"
+  keys:
+    personal:
+      no-virtual-keys: "{prefix}<bold><dark_gray>(<dark_red>!<dark_gray>)</bold> <gray>你当前没有任何虚拟钥匙。"
+      # 可用占位符: {crates_opened}
+      virtual-keys-header:
+        - "<bold><dark_gray>(<gold>!<dark_gray>)</bold> <gray>你当前的钥匙数量列表。"
+        - " <yellow> -> 已开启箱子总数：<red>{crates_opened}"
+        - ""
+    other-player:
+      # 可用占位符: {player}
+      no-virtual-keys: "{prefix}<bold><dark_gray>(<dark_red>!<dark_gray>)</bold> <gray>玩家 {player} 没有任何钥匙。"
+      # 可用占位符: {player}, {crates_opened}
+      virtual-keys-header:
+        - "<bold><dark_gray>(<gold>!<dark_gray>)</bold> <gray>{player} 当前的钥匙数量列表。"
+        - " <yellow> -> 已开启箱子总数：<red>{crates_opened}"
+        - ""
+    # 可用占位符: {crate}, {keys}, {crate_opened}
+    crate-format: "{crate} <bold><gray>><dark_gray>></bold> <gold>{keys} 把钥匙 <gray>: 已打开 <gold>{crate_opened} 次"
+  # 需要 crazycrates.command.help
+  player-help:
+    - "<bold><yellow>Crazy Crates 玩家帮助</bold>"
+    - ""
+    - "<gold>/keys view [player] <gray>- <yellow>查看玩家的钥匙数量。"
+    - "<gold>/keys <gray>- <yellow>查看你拥有的钥匙数量。"
+    - "<gold>/crates <gray>- <yellow>打开菜单。"
+  # 需要 crazycrates.command.admin.help
+  admin-help:
+    - "<bold><red>Crazy Crates 管理员帮助</bold>"
+    - ""
+    - "<gold>/crates additem <crate_name> <prize_number> <chance> [tier] <gray>- <yellow>在游戏内添加物品到箱子奖励（含 Cosmic/Casino）。"
+    - "<gold>/crates preview <crate_name> [player] <gray>- <yellow>为玩家打开箱子预览。"
+    - "<gold>/crates list <gray>- <yellow>列出所有箱子。"
+    - "<gold>/crates open <crate_name> <gray>- <yellow>若有钥匙则尝试打开箱子。"
+    - "<gold>/crates open-others <crate_name> [player] <gray>- <yellow>为玩家尝试打开箱子。"
+    - "<gold>/crates transfer <crate_name> [player] [amount <gray>- <yellow>向指定玩家转移钥匙。"
+    - "<gold>/crates debug <gray>- <yellow>调试箱子"
+    - "<gold>/crates admin <gray>- <yellow>打开管理员菜单"
+    - "<gold>/crates forceopen <crate_name> [player] <gray>- <yellow>为玩家免费打开箱子。"
+    - "<gold>/crates mass-open <crate_name> <physical/virtual> [amount] <gray>- <yellow>批量打开指定数量箱子。"
+    - "<gold>/crates tp <location> <gray>- <yellow>传送到箱子位置。"
+    - "<gold>/crates give-all <physical/virtual> <crate> <amount> [-s/--silent] <gray>- <yellow>给所有在线玩家发放钥匙。"
+    - "<gold>/crates give <physical/virtual> <crate_name> [amount] [player] [-s/--silent] <gray>- <yellow>给予玩家钥匙。"
+    - "<gold>/crates give-random <physical/virtual> <amount> [-s/--silent] <gray>- <yellow>给予玩家随机钥匙。"
+    - "<gold>/crates editor -c/--crate <crate_name> 或 -e/--exit <gray>- <yellow>进入/退出编辑模式。"
+    - "<gold>/crates migrate -mt/--migration_type <migration_type> --crate/-crate <crate> --data/-d <gray>- <yellow>从其他插件迁移数据或内部变更。"
+    - "<gold>/crates reload <gray>- <yellow>重载配置/数据文件。"
+    - "<gold>/crates set1/set2 <gray>- <yellow>设置制作 QuadCrates 的 <red>#1 <yellow>或 <red>#2 <yellow>位置。"
+    - "<gold>/crates save <file name> <gray>- <yellow>在 schematics 文件夹创建 nbt 文件。"
+    - ""
+    - "<gold>/keys view [player] <gray>- <yellow>查看玩家的钥匙数量。"
+    - "<gold>/keys <gray>- <yellow>查看你拥有的钥匙数量。"
+    - "<gold>/crates <gray>- <yellow>打开菜单。"
+    - ""
+    - "<gray>权限列表：<yellow>https://docs.crazycrew.us/docs/plugins/crazycrates/commands/permissions"

@@ -1,0 +1,113 @@
+Crate:
+  # 箱子类型 - RandomBox（传送带式动画，复刻自 random-box-master）
+  CrateType: RandomBox
+  
+  # 箱子名称
+  CrateName: "<gradient:#ff6b6b:#4ecdc4>随机宝箱</gradient>"
+  
+  # 预览名称
+  Preview-Name: "<gradient:#ff6b6b:#4ecdc4>随机宝箱预览</gradient>"
+  
+  # 开始消息
+  starting-keys:
+    - "<green>你打开了 <gradient:#ff6b6b:#4ecdc4>随机宝箱</gradient>！"
+  
+  # 玻璃边框
+  glass-border:
+    toggle: false
+  
+  # 物理钥匙
+  PhysicalKey:
+    Name: "<gradient:#ff6b6b:#4ecdc4>随机宝箱钥匙</gradient>"
+    Lore:
+      - "<gray>使用此钥匙打开"
+      - "<gradient:#ff6b6b:#4ecdc4>随机宝箱</gradient>"
+      - ""
+      - "<yellow>右键点击箱子使用</yellow>"
+    item: "tripwire_hook"
+    glowing: true
+    custom-model-data: 0
+  
+  # 全息图
+  Hologram:
+    toggle: true
+    height: 1.5
+    background-color: "#00000000"
+    message:
+      - "<gradient:#ff6b6b:#4ecdc4>随机宝箱</gradient>"
+      - "<gray>传送带式抽奖</gray>"
+      - "<yellow>右键点击打开</yellow>"
+  
+  # 奖品配置
+  Prizes:
+    "1":
+      DisplayName: "<yellow>🍋 柠檬</yellow>"
+      DisplayItem: "yellow_dye"
+      DisplayAmount: 1
+      DisplayLore:
+        - "<gray>获得 32 个金锭"
+        - "<yellow>普通奖励</yellow>"
+      Weight: 30.0
+      Items:
+        - "Item:gold_ingot, Amount:32"
+    
+    "2":
+      DisplayName: "<red>🍒 樱桃</red>"
+      DisplayItem: "sweet_berries"
+      DisplayAmount: 1
+      DisplayLore:
+        - "<gray>获得 16 个钻石"
+        - "<red>稀有奖励</red>"
+      Weight: 20.0
+      Items:
+        - "Item:diamond, Amount:16"
+    
+    "3":
+      DisplayName: "<light_purple>🍇 葡萄</light_purple>"
+      DisplayItem: "chorus_fruit"
+      DisplayAmount: 1
+      DisplayLore:
+        - "<gray>获得附魔书"
+        - "<light_purple>特殊奖励</light_purple>"
+      Weight: 25.0
+      Items:
+        - "Item:enchanted_book, Amount:1"
+    
+    "4":
+      DisplayName: "<green>🍉 西瓜</green>"
+      DisplayItem: "melon_slice"
+      DisplayAmount: 1
+      DisplayLore:
+        - "<gray>获得 64 个绿宝石"
+        - "<green>优质奖励</green>"
+      Weight: 15.0
+      Items:
+        - "Item:emerald, Amount:64"
+    
+    "5":
+      DisplayName: "<gold>💎 钻石 777</gold>"
+      DisplayItem: "diamond_block"
+      DisplayAmount: 1
+      DisplayLore:
+        - "<gray>获得 3 个钻石块"
+        - "<gold>🎰 超级大奖！🎰</gold>"
+        - "<red>100抽必得！</red>"
+      Weight: 5.0
+      Guaranteed: true
+      GuaranteedCount: 100
+      Items:
+        - "Item:diamond_block, Amount:3"
+    
+    "6":
+      DisplayName: "<aqua>⭐ 幸运之星</aqua>"
+      DisplayItem: "nether_star"
+      DisplayAmount: 1
+      DisplayLore:
+        - "<gray>获得 1 个下界之星"
+        - "<aqua>⭐ 终极大奖 ⭐</aqua>"
+        - "<gold>100抽必得！</gold>"
+      Weight: 5.0
+      Guaranteed: true
+      GuaranteedCount: 100
+      Items:
+        - "Item:nether_star, Amount:1"

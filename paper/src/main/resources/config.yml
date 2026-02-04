@@ -1,0 +1,284 @@
+# 支持: https://discord.gg/badbones-s-live-chat-182615261403283459
+# Github: https://github.com/Crazy-Crew
+#
+# 问题反馈: https://github.com/Crazy-Crew/CrazyCrates/issues
+# 功能建议: https://github.com/Crazy-Crew/CrazyCrates/issues
+#
+# 所有音效列表: https://minecraft.wiki/w/Sounds.json#Java_Edition_values
+root:
+  # 此选项允许你测试不同的随机数生成方式。如果遇到问题，可以设置回 false。
+  #
+  # 如果设置为 false，理论上物品会更加随机。
+  use-different-random: false
+  # 此选项允许你使用新的奖品物品布局，更加直观且不易出错。
+  # 设置为 true 后，可以运行 /crazycrates migrate -mt NewItemFormat 来迁移所有现有奖品
+  #
+  # 运行迁移前请先备份，因为可能存在错误。
+  use-different-items-layout: false
+  # 此选项定义 CrazyCrates 使用的游戏内编辑器格式。
+  #
+  # true -> 使用新编辑器
+  # false -> 使用旧编辑器
+  #
+  use-new-editor: false
+  # 最近对打开箱子的权限系统进行了更改
+  # 通配符权限的工作方式与我预期的不同
+  # 超级权限系统的通配符很愚蠢...但我离题了
+  #
+  # 无论如何，为此添加一个开关是合理的。
+  #
+  # false -> crazycrates.open.<箱子名称>
+  # true -> crazycrates.deny.open.<箱子名称>
+  #
+  # 最终，这些选项之一将被移除或保留。
+  # 更改此选项需要重启服务器！
+  use-new-permission-system: false
+  # 此选项告诉插件将所有消息作为动作栏或聊天消息发送。
+  #
+  # send_message -> 在聊天中发送消息。
+  # send_actionbar -> 在动作栏中发送消息。
+  #
+  message-state: "send_message"
+  # 可用的全息图插件列表：
+  #  -> DecentHolograms
+  #  -> FancyHolograms
+  #  -> CMI
+  #  -> None
+  #
+  # 如果设置为空白，它会自动选择任何可用的插件。
+  # 如果不想使用任何全息图插件，请设置为 None。
+  hologram-plugin: ""
+  # 此选项会在 /crazycrates reload 或插件启动时清空示例文件夹，以便你始终有新的示例可供查看。
+  update-examples-folder: true
+  # 命令中使用的前缀
+  command_prefix: " <gradient:#e91e63:blue>CrazyCrates</gradient> | "
+# GUI 相关设置。
+gui:
+  # 是否让 /crates 命令打开主菜单。警告：这将从箱子预览中移除菜单按钮。
+  toggle: true
+  # 背包设置，如大小。
+  inventory:
+    # GUI 的名称。
+    name: "<bold><gradient:#e91e63:blue>Crazy Crates</gradient></bold>"
+    # GUI 的行数。
+    rows: 5
+    # GUI 中的按钮。
+    buttons:
+      # 主菜单按钮。
+      menu:
+        # 按钮使用的物品。
+        item: "compass"
+        # 下一个按钮的位置。
+        placement:
+          # 物品的行。不能使用大于背包可用行数的数字，-1 使用默认值。
+          row: -1
+          # 物品的列。-1 使用默认值。
+          column: 5
+        override:
+          # 这将禁用我们当前在箱子预览中的主菜单按钮功能。
+          # 它允许你使用命令覆盖并使用你选择的插件菜单。
+          toggle: false
+          # 点击主菜单按钮时运行的命令列表。上面的 override 选项必须设置为 true。
+          list:
+            - "see {player}"
+        # 物品的自定义模型数据，-1 表示禁用。
+        custom-model-data: -1
+        # 物品模型，Mojang 在 1.21.4 中引入了这个...它取代了自定义模型数据！
+        # 设置为空白则不执行任何操作。
+        model:
+          # 命名空间，例如 nexo
+          namespace: ""
+          # ID，例如 emerald_helmet
+          id: ""
+        # 物品的名称。
+        name: "<bold><gray>» <red>菜单 <gray>«</bold>"
+        # 物品的描述。
+        lore:
+          - "<gray>返回菜单。"
+      # 下一页按钮。
+      next:
+        # 按钮使用的物品。
+        item: "feather"
+        # 下一个按钮的位置。
+        placement:
+          # 物品的行。不能使用大于背包可用行数的数字，-1 使用默认值。
+          row: -1
+          # 物品的列。-1 使用默认值。
+          column: 6
+        # 物品的自定义模型数据，-1 表示禁用。
+        custom-model-data: -1
+        # 物品模型，Mojang 在 1.21.4 中引入了这个...它取代了自定义模型数据！
+        # 设置为空白则不执行任何操作。
+        model:
+          # 命名空间，例如 nexo
+          namespace: ""
+          # ID，例如 emerald_helmet
+          id: ""
+        # 物品的名称。
+        name: "<bold><gold>下一页 »</bold>"
+        # 物品的描述。
+        lore:
+          - "<bold><gray>页码：</bold> <blue>{page}"
+      # 上一页按钮。
+      back:
+        # 按钮使用的物品。
+        item: "feather"
+        # 下一个按钮的位置。
+        placement:
+          # 物品的行。不能使用大于背包可用行数的数字，-1 使用默认值。
+          row: -1
+          # 物品的列。-1 使用默认值。
+          column: 4
+        # 物品的自定义模型数据，-1 表示禁用。
+        custom-model-data: -1
+        # 物品模型，Mojang 在 1.21.4 中引入了这个...它取代了自定义模型数据！
+        # 设置为空白则不执行任何操作。
+        model:
+          # 命名空间，例如 nexo
+          namespace: ""
+          # ID，例如 emerald_helmet
+          id: ""
+        # 物品的名称。
+        name: "<bold><gold>« 上一页</bold>"
+        # 物品的描述。
+        lore:
+          - "<bold><gray>页码：</bold> <blue>{page}"
+      filler:
+        # 菜单是否应该用一种物品填充？
+        toggle: false
+        # 用于填充菜单的物品。
+        item: "black_stained_glass_pane"
+        # 物品的自定义模型数据，-1 表示禁用。
+        custom-model-data: -1
+        # 物品模型，Mojang 在 1.21.4 中引入了这个...它取代了自定义模型数据！
+        # 设置为空白则不执行任何操作。
+        model:
+          # 命名空间，例如 nexo
+          namespace: ""
+          # ID，例如 emerald_helmet
+          id: ""
+        # 物品的名称。
+        name: " "
+        # 物品的描述。
+        lore: []
+      customizer:
+        # 是否启用自定义器？
+        toggle: true
+        # 要设置到 GUI 的物品。
+        items:
+          - "slot:0, item:red_stained_glass_pane, name: "
+          - "slot:1, item:red_stained_glass_pane, name: "
+          - "slot:2, item:red_stained_glass_pane, name: "
+          - "slot:3, item:red_stained_glass_pane, name: "
+          - "slot:4, item:red_stained_glass_pane, name: "
+          - "slot:5, item:red_stained_glass_pane, name: "
+          - "slot:6, item:red_stained_glass_pane, name: "
+          - "slot:7, item:red_stained_glass_pane, name: "
+          - "slot:8, item:red_stained_glass_pane, name: "
+          - "slot:36, item:red_stained_glass_pane, name: "
+          - "slot:37, item:red_stained_glass_pane, name: "
+          - "slot:38, item:red_stained_glass_pane, name: "
+          - "slot:39, item:red_stained_glass_pane, name: "
+          - "slot:40, item:red_stained_glass_pane, name: "
+          - "slot:41, item:red_stained_glass_pane, name: "
+          - "slot:42, item:red_stained_glass_pane, name: "
+          - "slot:43, item:red_stained_glass_pane, name: "
+          - "slot:44, item:red_stained_glass_pane, name: "
+          - "slot:9, item:blue_stained_glass_pane, name: "
+          - "slot:18, item:blue_stained_glass_pane, name: "
+          - "slot:27, item:blue_stained_glass_pane, name: "
+          - "slot:17, item:blue_stained_glass_pane, name: "
+          - "slot:26, item:blue_stained_glass_pane, name: "
+          - "slot:35, item:blue_stained_glass_pane, name: "
+          - "slot:10, item:cyan_stained_glass_pane, name: "
+          - "slot:12, item:cyan_stained_glass_pane, name: "
+          - "slot:14, item:cyan_stained_glass_pane, name: "
+          - "slot:24, item:cyan_stained_glass_pane, name: "
+          - "slot:16, item:cyan_stained_glass_pane, name: "
+          - "slot:19, item:cyan_stained_glass_pane, name: "
+          - "slot:20, item:cyan_stained_glass_pane, name: "
+          - "slot:21, item:cyan_stained_glass_pane, name: "
+          - "slot:22, item:cyan_stained_glass_pane, name: "
+          - "slot:23, item:cyan_stained_glass_pane, name: "
+          - "slot:24, item:cyan_stained_glass_pane, name: "
+          - "slot:25, item:cyan_stained_glass_pane, name: "
+          - "slot:28, item:cyan_stained_glass_pane, name: "
+          - "slot:30, item:cyan_stained_glass_pane, name: "
+          - "slot:31, item:cyan_stained_glass_pane, name: "
+          - "slot:32, item:cyan_stained_glass_pane, name: "
+          - "slot:33, item:cyan_stained_glass_pane, name: "
+          - "slot:34, item:cyan_stained_glass_pane, name: "
+# 箱子相关设置。
+crate:
+  interaction:
+    # 此选项将切换预览/打开物理箱子的处理方式。
+    #
+    #  true -> 右键打开，左键预览
+    #  false -> 左键打开，右键预览
+    physical: true
+    # 此选项将切换预览/打开虚拟箱子的处理方式。
+    #
+    #  true -> 右键打开，左键预览
+    #  false -> 左键打开，右键预览
+    virtual: false
+  # 打开 QuickCrate 时是否显示展示物品
+  quickcrate-display-item: true
+  # 如果没有钥匙，箱子是否应该击退你。
+  knock-back: true
+  # 预览设置。
+  preview:
+    # 在 /crates reload 期间是否强制玩家退出预览
+    force-exit: false
+    # 如果被强制退出预览，是否发送消息。
+    send-message: false
+  # 如果玩家进入与奖品 GUI 相关的菜单，是否应该超时？
+  #
+  # 它会等待 10 秒，如果他们已经收集了 3 个奖品，它只会给一个奖品。
+  cosmic-crate-timeout: true
+  # 钥匙功能相关设置。
+  keys:
+    # 物理箱子是否接受虚拟钥匙？
+    physical-crate-accepts-virtual-keys: true
+    # 物理箱子是否接受物理钥匙？
+    physical-crate-accepts-physical-keys: true
+    # 虚拟箱子是否接受物理钥匙？
+    virtual-crate-accepts-physical-keys: true
+    # 玩家背包不为空时的相关设置。
+    inventory-settings:
+      # 如果背包不为空，是否应该给玩家虚拟钥匙？如果设置为 false，所有钥匙将掉落在地上。
+      give-virtual-keys: false
+      # 当背包不为空时，是否应该通知玩家？
+      send-message: false
+    key-sound:
+      # 如果没有钥匙，是否应该播放声音？
+      toggle: true
+      # 使用的声音类型。
+      # https://minecraft.wiki/w/Sounds.json#Java_Edition_values
+      name: "entity.villager.no"
+  # QuadCrate 相关设置
+  quad-crate:
+    # QuadCrate 应该激活多长时间？
+    timer: 300
+  # 你想在哪些世界中禁用箱子？
+  disabled-worlds:
+    - "world_nether"
+  # 如果设置为 true，此选项将强制箱子使用箱子文件中设置的所需钥匙
+  use-required-keys: false
+  # 此部分包含与不同箱子类型相关的设置。
+  types:
+    # 此部分与 csgo 箱子类型的设置相关。
+    csgo:
+      # 在 csgo 箱子的第 4 和 22 槽位设置静态材料
+      # 这在奖品的上方和下方
+      #
+      # 设置为空白以使用玻璃填充。
+      cycling-material: "gold_ingot"
+      # 在 csgo 箱子的第 4 和 22 槽位设置静态材料
+      # 这在奖品的上方和下方，仅在箱子结束时显示。
+      #
+      # 设置为空白以使用玻璃填充。
+      finished-material: "iron_ingot"
+  # 如果启用，将所有箱子操作记录到控制台。
+  log-to-console: false
+  # 将所有箱子/钥匙操作记录到单独的文件中，在插件重载和关闭时。文件将压缩以避免大小错误。
+  log-to-file: false
