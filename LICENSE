@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2016-2024 CrazyCrew
+Original Project Copyright (c) 2016-2024 CrazyCrew
+Modified Version Copyright (c) 2026 KillGoddess
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +20,53 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## About This Modified Version
+
+This is a modified version of CrazyCrates, maintained by KillGoddess.
+
+### Original Project
+- Repository: https://github.com/Crazy-Crew/CrazyCrates
+- Author: CrazyCrew
+- License: MIT License
+
+### Modified Version
+- Repository: https://github.com/KillGoddess/zoo
+- Maintainer: KillGoddess
+- License: MIT License (inherited from original project)
+
+### Modifications Include
+- RandomBox crate animation (conveyor belt style)
+- Five-pull feature (Shift + Right Click)
+- Single-tier pity system (guarantee mechanism)
+- Purpur 1.21.4 compatibility fixes
+- Complete Chinese documentation
+
+All modifications are released under the same MIT License as the original project.
+
+---
+
+## 关于本修改版本
+
+这是 CrazyCrates 的修改版本，由 KillGoddess 维护。
+
+### 原始项目
+- 仓库: https://github.com/Crazy-Crew/CrazyCrates
+- 作者: CrazyCrew
+- 协议: MIT License
+
+### 修改版本
+- 仓库: https://github.com/KillGoddess/zoo
+- 维护者: KillGoddess
+- 协议: MIT License（继承自原项目）
+
+### 修改内容包括
+- RandomBox 抽奖动画（传送带风格）
+- 五连抽功能（Shift + 右键）
+- 单层保底系统（保底机制）
+- Purpur 1.21.4 兼容性修复
+- 完整的中文文档
+
+所有修改内容均以与原项目相同的 MIT 协议发布。

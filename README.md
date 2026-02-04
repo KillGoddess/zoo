@@ -1,69 +1,296 @@
-<center><div align="center">
+# CrazyCrates - KillGoddess 定制版
 
-![CrazyCrates](https://raw.githubusercontent.com/Crazy-Crew/Branding/main/crazycrates/banner/webp/banner.webp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub](https://img.shields.io/badge/GitHub-KillGoddess%2Fzoo-blue)](https://github.com/KillGoddess/zoo)
 
-[![][build-shield]][build-url]
-[![][discord-shield]][discord-url]
-[![][contributors-shield]][contributors-url]
-[![][forks-shield]][forks-url]
-[![][stars-shield]][stars-url]
-[![][issues-shield]][issues-url]
-[![][license-shield]][license-url]
-[![][codefactor-shield]][codefactor-url]
+## 📦 关于本项目
 
-</div></center>
+这是基于 [CrazyCrates](https://github.com/Crazy-Crew/CrazyCrates) 的定制修改版本，由 **KillGoddess** 维护和开发。
 
-CrazyCrates is a crates plugin for Paper based servers that lets you add unlimited crates. It allows you to bring something to the server to spice up your economy and to give your players something to brag about.
+### 🎯 原始项目
 
-## Building
-CrazyCrates requires gradle 8.12 to build the plugin.
+- **原项目**: [Crazy-Crew/CrazyCrates](https://github.com/Crazy-Crew/CrazyCrates)
+- **原作者**: CrazyCrew
+- **原始协议**: MIT License
+- **官方文档**: https://docs.crazycrew.us/docs/plugins/crazycrates
+- **官方 Discord**: https://discord.gg/badbones-s-live-chat-182615261403283459
 
-### Requirements
-* Java 21 JDK or newer
-* Knowledge of Git
+### ✨ 本版本新增功能
 
-### Compiling from source
-```sh
-git clone https://github.com/Crazy-Crew/CrazyCrates.git
-cd CrazyCrates
-./gradlew assemble
+#### 🎰 RandomBox 抽奖动画
+- **传送带风格动画**: 物品从右向左滚动，模拟真实抽奖体验
+- **4段变速系统**: 快速 → 中速 → 慢速 → 极慢，总时长 7.5 秒
+- **54格界面**: 6行×9列，带灰色玻璃边框装饰
+- **完美兼容保底系统**: 支持所有保底机制
+
+#### 🎁 五连抽功能
+- **快捷操作**: 按住 Shift + 右键点击箱子即可五连抽
+- **智能检测**: 自动检查是否有足够的钥匙（物理钥匙或虚拟钥匙）
+- **保底计数**: 每次抽取都正确累计保底次数
+- **即时奖励**: 直接发放5个奖品，无需等待动画
+
+#### 🎲 保底系统
+- **单层保底机制**: 类似传统抽卡游戏的保底系统
+- **灵活配置**: 每个奖品可单独设置保底次数
+- **自动重置**: 触发保底后自动重置计数
+- **可视化提示**: 触发保底时显示华丽的 Title 和消息提示
+- **PlaceholderAPI 支持**: `%crazycrates_<箱子名>_pity_count%` 显示当前保底进度
+
+#### 🔧 兼容性修复
+- **Purpur 1.21.4 完美兼容**: 修复了 `NoSuchFieldError: UNBREAKABLE` 错误
+- **Paper 1.21.4-1.21.8 支持**: 向下兼容多个版本
+- **不可变集合修复**: 解决了 `UnsupportedOperationException` 问题
+
+### 📚 完整中文文档
+
+本版本包含详细的中文使用文档：
+- `RandomBox箱子使用说明.md` - RandomBox 动画使用指南
+- `RandomBox配置示例说明.md` - 配置文件详细说明
+- `更新日志_v5.0.13.md` - 版本更新记录
+
+---
+
+## 🚀 快速开始
+
+### 系统要求
+- **服务端**: Paper 1.21.4+ / Purpur 1.21.4+
+- **Java**: 21 或更高版本
+
+### 安装步骤
+
+1. **下载插件**
+   ```bash
+   git clone https://github.com/KillGoddess/zoo.git
+   cd zoo
+   ```
+
+2. **编译插件**
+   ```bash
+   ./gradlew build -x test --no-daemon
+   ```
+   编译完成后，在 `paper/build/libs/paper.jar` 找到插件文件
+
+3. **安装到服务器**
+   - 将 `paper.jar` 复制到服务器的 `plugins` 文件夹
+   - 重启服务器
+
+4. **配置箱子**
+   - 在 `plugins/CrazyCrates/crates/` 文件夹中创建或修改配置文件
+   - 参考 `RandomBox.yml` 和 `RandomBoxExample.yml` 示例
+
+### 使用 RandomBox 动画
+
+在箱子配置文件中设置：
+```yaml
+Crate:
+  CrateType: random_box
+  # ... 其他配置
 ```
-You'll find the jar in the `jars` folder.
 
-### Contributing
-#### Pull Requests
-If you have made any changes or improvements which you think could be beneficial to others, please make a pull request, so that the plugin can be improved for everyone using it. (we especially like bug fixes \o/).
+完整配置示例请查看 `paper/src/main/resources/crates/RandomBox.yml`
 
-##### A list of pointers when editing existing classes
-* Copy the style of code in the class you are editing.
-* No extra lines at the end of files.
-* No extra lines between imports.
-* No wildcard imports.
+### 启用保底系统
 
-#### Project Structure
-The project has been separated into multiple modules for preemptively supporting other platforms.
-* Api Module - This module is the API used by other plugins that wish to properly integrate with our plugin, and receive data from CrazyCrates for use in their own plugins. No implementation details are in this module.
-* Core Module - This module handles a small portion of the implementation for CrazyCrates, mainly the configuration files. and independent enums or utilities.
-  * The module does not yet handle implementation details for each platform.
-* Paper Module - This module currently is what provides the implementation for the `API Module`, I have not written an exact abstract module to sit between, and reduce more duplicated code between platforms.
-  * Pull Requests that attempt to implement the remaining work of an abstract layer for multi-platform support will likely be ignored, I would like to handle that when the time comes.
+在奖品配置中添加：
+```yaml
+Prizes:
+  1:
+    DisplayName: "<gold>传说级奖品"
+    Guaranteed: true          # 标记为保底奖品
+    GuaranteedCount: 100      # 100次必出
+    Weight: 0.5
+    # ... 其他配置
+```
 
-#### License
-CrazyCrates is a proud user of the MIT license, You can take a little peak at [LICENSE](https://github.com/Crazy-Crew/CrazyCrates/blob/master/LICENSE)
+### 使用五连抽
 
-[contributors-shield]: https://img.shields.io/github/contributors/Crazy-Crew/CrazyCrates.svg?style=flat&logo=appveyor
-[contributors-url]: https://github.com/Crazy-Crew/CrazyCrates/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Crazy-Crew/CrazyCrates.svg?style=flat&logo=appveyor
-[forks-url]: https://github.com/Crazy-Crew/CrazyCrates/network/members
-[stars-shield]: https://img.shields.io/github/stars/Crazy-Crew/CrazyCrates.svg?style=flat&logo=appveyor
-[stars-url]: https://github.com/Crazy-Crew/CrazyCrates/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Crazy-Crew/CrazyCrates.svg?style=flat&logo=appveyor
-[issues-url]: https://github.com/Crazy-Crew/CrazyCrates/issues
-[license-shield]: https://img.shields.io/github/license/Crazy-Crew/CrazyCrates.svg?style=flat&logo=appveyor
-[license-url]: https://github.com/Crazy-Crew/CrazyCrates/blob/main/LICENSE
-[build-shield]: https://ci.crazycrew.us/job/CrazyCrates//badge/icon
-[build-url]: https://ci.crazycrew.us/job/CrazyCrates
-[discord-shield]: https://img.shields.io/discord/182615261403283459.svg?label=discord&logo=discord
-[discord-url]: https://discord.gg/badbones-s-live-chat-182615261403283459
-[codefactor-shield]: https://www.codefactor.io/repository/github/crazy-crew/crazycrates/badge
-[codefactor-url]: https://www.codefactor.io/repository/github/crazy-crew/crazycrates
+玩家操作：
+1. 确保拥有至少 5 把钥匙（物理或虚拟）
+2. 按住 **Shift** 键
+3. **右键点击** 箱子
+4. 自动消耗 5 把钥匙并获得 5 个奖品
+
+---
+
+## 🛠️ 开发构建
+
+### 环境要求
+- Java 21 JDK 或更高版本
+- Gradle 8.12+
+- Git
+
+### 从源码编译
+
+```bash
+# 克隆仓库
+git clone https://github.com/KillGoddess/zoo.git
+cd zoo
+
+# 编译（跳过测试）
+./gradlew build -x test --no-daemon
+
+# 输出文件位置
+# paper/build/libs/paper.jar
+```
+
+### 项目结构
+
+```
+CrazyCrates/
+├── api/              # API 模块
+├── core/             # 核心模块（配置处理）
+├── paper/            # Paper 实现模块
+│   ├── src/main/java/
+│   │   └── com/badbones69/crazycrates/paper/
+│   │       ├── tasks/crates/types/
+│   │       │   └── RandomBoxCrate.java    # RandomBox 动画实现
+│   │       ├── listeners/crates/
+│   │       │   └── CrateInteractListener.java  # 五连抽功能
+│   │       ├── api/objects/
+│   │       │   ├── Crate.java             # 保底系统核心
+│   │       │   └── Prize.java             # 奖品保底配置
+│   │       └── managers/
+│   │           └── BukkitUserManager.java # 保底计数管理
+│   └── src/main/resources/crates/
+│       ├── RandomBox.yml                  # RandomBox 配置示例
+│       └── RandomBoxExample.yml           # 完整配置示例
+└── buildSrc/         # 构建脚本
+```
+
+---
+
+## 📖 详细文档
+
+### 配置文件说明
+
+#### RandomBox 动画配置
+详见 `RandomBox配置示例说明.md`
+
+#### 保底系统配置
+```yaml
+Prizes:
+  LegendaryPrize:
+    Guaranteed: true          # 是否为保底奖品
+    GuaranteedCount: 100      # 保底次数（100次必出）
+    Weight: 0.5               # 正常抽取权重
+```
+
+#### PlaceholderAPI 变量
+- `%crazycrates_<箱子名>_pity_count%` - 当前保底计数
+
+### API 使用
+
+```java
+// 获取玩家的保底计数
+BukkitUserManager userManager = plugin.getUserManager();
+int pityCount = userManager.getOpenCount(player.getUniqueId(), "RandomBox");
+
+// 增加保底计数
+userManager.addOpenCount(player.getUniqueId(), "RandomBox");
+
+// 重置保底计数
+userManager.resetOpenCount(player.getUniqueId(), "RandomBox");
+```
+
+---
+
+## 🤝 贡献指南
+
+欢迎提交 Pull Request 或 Issue！
+
+### 代码规范
+- 遵循现有代码风格
+- 文件末尾不要有多余空行
+- 不使用通配符导入
+- 添加必要的中文注释
+
+### 提交 Pull Request
+1. Fork 本仓库
+2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交你的修改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启一个 Pull Request
+
+---
+
+## 📄 开源协议
+
+本项目继承原项目的 MIT 协议。
+
+### MIT License
+
+```
+原始项目版权所有 (c) 2016-2024 CrazyCrew
+修改版本版权所有 (c) 2026 KillGoddess
+
+特此免费授予任何获得本软件副本和相关文档文件（下称"软件"）的人不受限制地
+处置该软件的权利，包括不受限制地使用、复制、修改、合并、发布、分发、转授许可
+和/或出售该软件副本，以及再授权被配发了本软件的人如上的权利，须在下列条件下：
+
+上述版权声明和本许可声明应包含在该软件的所有副本或实质成分中。
+
+本软件是"如此"提供的，没有任何形式的明示或暗示的保证，包括但不限于对适销性、
+特定用途的适用性和不侵权的保证。在任何情况下，作者或版权持有人都不对任何索赔、
+损害或其他责任负责，无论这些追责来自合同、侵权或其它行为中，还是产生于、源于
+或有关于本软件以及本软件的使用或其它处置。
+```
+
+完整协议请查看 [LICENSE](LICENSE) 文件。
+
+---
+
+## 🔗 相关链接
+
+### 本项目
+- **GitHub 仓库**: https://github.com/KillGoddess/zoo
+- **问题反馈**: https://github.com/KillGoddess/zoo/issues
+- **维护者**: KillGoddess
+
+### 原始项目
+- **原项目仓库**: https://github.com/Crazy-Crew/CrazyCrates
+- **官方文档**: https://docs.crazycrew.us/docs/plugins/crazycrates
+- **官方 Discord**: https://discord.gg/badbones-s-live-chat-182615261403283459
+- **bStats 统计**: https://bstats.org/plugin/bukkit/CrazyCrates/4514
+
+---
+
+## 📝 更新日志
+
+### v5.0.14 (2026-02-05)
+- ✨ 新增 RandomBox 抽奖动画（传送带风格）
+- ✨ 新增五连抽功能（Shift + 右键）
+- ✨ 新增单层保底系统
+- 🐛 修复 Purpur 1.21.4 兼容性问题
+- 📚 添加完整中文文档
+
+### v5.0.13 及更早版本
+请查看 `HISTORY.md` 和 `changelog.md`
+
+---
+
+## ⚠️ 免责声明
+
+本项目是基于 CrazyCrew 的 CrazyCrates 插件的修改版本。所有新增功能和修改均由 KillGoddess 独立开发。
+
+- 本项目遵循原项目的 MIT 开源协议
+- 原项目的所有权利归 CrazyCrew 所有
+- 修改部分的版权归 KillGoddess 所有
+- 使用本插件造成的任何问题，开发者不承担责任
+
+---
+
+## 💖 致谢
+
+- 感谢 **CrazyCrew** 团队开发的优秀原始插件
+- 感谢所有为原项目做出贡献的开发者
+- 感谢 Paper 和 Purpur 团队提供的优秀服务端
+
+---
+
+<div align="center">
+
+**如果这个项目对你有帮助，请给个 ⭐ Star！**
+
+Made with ❤️ by KillGoddess
+
+</div>
