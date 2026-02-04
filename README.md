@@ -1,7 +1,7 @@
 # CrazyCrates - KillGoddess 定制版
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub](https://img.shields.io/badge/GitHub-KillGoddess%2Fzoo-blue)](https://github.com/KillGoddess/zoo)
+[![GitHub](https://img.shields.io/badge/GitHub-KillGoddess%2FCrazyCratesKgd-blue)](https://github.com/KillGoddess/CrazyCratesKgd)
 
 ## 📦 关于本项目
 
@@ -14,6 +14,12 @@
 - **原始协议**: MIT License
 - **官方文档**: https://docs.crazycrew.us/docs/plugins/crazycrates
 - **官方 Discord**: https://discord.gg/badbones-s-live-chat-182615261403283459
+
+### 📦 本定制版
+
+- **仓库地址**: https://github.com/KillGoddess/CrazyCratesKgd
+- **维护者**: KillGoddess
+- **版本**: v5.0.14
 
 ### ✨ 本版本新增功能
 
@@ -60,8 +66,8 @@
 
 1. **下载插件**
    ```bash
-   git clone https://github.com/KillGoddess/zoo.git
-   cd zoo
+   git clone https://github.com/KillGoddess/CrazyCratesKgd.git
+   cd CrazyCratesKgd
    ```
 
 2. **编译插件**
@@ -123,8 +129,8 @@ Prizes:
 
 ```bash
 # 克隆仓库
-git clone https://github.com/KillGoddess/zoo.git
-cd zoo
+git clone https://github.com/KillGoddess/CrazyCratesKgd.git
+cd CrazyCratesKgd
 
 # 编译（跳过测试）
 ./gradlew build -x test --no-daemon
@@ -242,8 +248,8 @@ userManager.resetOpenCount(player.getUniqueId(), "RandomBox");
 ## 🔗 相关链接
 
 ### 本项目
-- **GitHub 仓库**: https://github.com/KillGoddess/zoo
-- **问题反馈**: https://github.com/KillGoddess/zoo/issues
+- **GitHub 仓库**: https://github.com/KillGoddess/CrazyCratesKgd
+- **问题反馈**: https://github.com/KillGoddess/CrazyCratesKgd/issues
 - **维护者**: KillGoddess
 
 ### 原始项目

@@ -4,7 +4,7 @@
 
 ### 本项目
 - **项目名称**: CrazyCrates - KillGoddess 定制版
-- **仓库地址**: https://github.com/KillGoddess/zoo
+- **仓库地址**: https://github.com/KillGoddess/CrazyCratesKgd
 - **维护者**: KillGoddess
 - **版本**: v5.0.14
 - **协议**: MIT License
@@ -163,7 +163,7 @@
 ### 为本定制版贡献
 如果你想为本定制版做出贡献：
 
-1. **Fork 本仓库**: https://github.com/KillGoddess/zoo
+1. **Fork 本仓库**: https://github.com/KillGoddess/CrazyCratesKgd
 2. **创建特性分支**: `git checkout -b feature/AmazingFeature`
 3. **提交你的修改**: `git commit -m 'Add some AmazingFeature'`
 4. **推送到分支**: `git push origin feature/AmazingFeature`
@@ -204,8 +204,8 @@ Copyright (c) 2026 KillGoddess
 ## 🔗 相关链接
 
 ### 本定制版
-- **GitHub**: https://github.com/KillGoddess/zoo
-- **Issues**: https://github.com/KillGoddess/zoo/issues
+- **GitHub**: https://github.com/KillGoddess/CrazyCratesKgd
+- **Issues**: https://github.com/KillGoddess/CrazyCratesKgd/issues
 - **维护者**: KillGoddess
 
 ### 原始项目
