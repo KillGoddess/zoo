@@ -1,0 +1,186 @@
+# ==========================================
+# RandomBox 标准配置
+# ==========================================
+# 版本: v5.0.14
+# 特性: 传送带动画 + 多层保底 + 五连抽
+# ==========================================
+
+Crate:
+  CrateType: RandomBox
+  CrateName: "<gradient:#ff6b6b:#4ecdc4>随机宝箱</gradient>"
+  
+  Preview:
+    Toggle: true
+    Rows: 6
+    Glass:
+      Toggle: true
+      Name: " "
+      Item: "gray_stained_glass_pane"
+  
+  PhysicalKey:
+    Name: "<gradient:#ff6b6b:#4ecdc4>随机宝箱钥匙</gradient>"
+    Lore:
+      - "<gray>使用此钥匙打开随机宝箱"
+      - ""
+      - "<aqua>保底系统："
+      - "<gold>  • 100抽必出传说</gold>"
+      - ""
+      - "<green>右键 = 单抽 | Shift+右键 = 五连抽</green>"
+    item: "tripwire_hook"
+    glowing: true
+
+Prizes:
+  # ========== 普通奖品 ==========
+  "1":
+    DisplayName: "<white>🍋 柠檬</white>"
+    DisplayItem: "yellow_dye"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>获得 32 个金锭"
+      - "<white>普通奖励</white>"
+    Weight: 30.0
+    Items:
+      - "Item:gold_ingot, Amount:32"
+  
+  "2":
+    DisplayName: "<white>🍊 橙子</white>"
+    DisplayItem: "orange_dye"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>获得 16 个铁锭"
+      - "<white>普通奖励</white>"
+    Weight: 28.0
+    Items:
+      - "Item:iron_ingot, Amount:16"
+  
+  "3":
+    DisplayName: "<white>🍇 葡萄</white>"
+    DisplayItem: "purple_dye"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>获得 64 个煤炭"
+      - "<white>普通奖励</white>"
+    Weight: 25.0
+    Items:
+      - "Item:coal, Amount:64"
+  
+  # ========== 稀有奖品 ==========
+  "4":
+    DisplayName: "<light_purple>💎 紫水晶</light_purple>"
+    DisplayItem: "amethyst_shard"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>获得 16 个紫水晶碎片"
+      - "<light_purple>稀有奖励</light_purple>"
+    Weight: 15.0
+    Items:
+      - "Item:amethyst_shard, Amount:16"
+  
+  "5":
+    DisplayName: "<light_purple>🔮 末影珍珠</light_purple>"
+    DisplayItem: "ender_pearl"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>获得 8 个末影珍珠"
+      - "<light_purple>稀有奖励</light_purple>"
+    Weight: 12.0
+    Items:
+      - "Item:ender_pearl, Amount:8"
+  
+  "6":
+    DisplayName: "<light_purple>⚔️ 钻石剑</light_purple>"
+    DisplayItem: "diamond_sword"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>获得附魔钻石剑"
+      - "<light_purple>稀有奖励</light_purple>"
+      - "<yellow>锋利 III</yellow>"
+    Weight: 10.0
+    Commands:
+      - "give %player% diamond_sword{Enchantments:[{id:sharpness,lvl:3}]} 1"
+  
+  # ========== 史诗奖品 ==========
+  "7":
+    DisplayName: "<gold>🛡️ 钻石护甲</gold>"
+    DisplayItem: "diamond_chestplate"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>获得全套钻石护甲"
+      - "<gold>史诗奖励</gold>"
+      - "<yellow>保护 III</yellow>"
+    Weight: 5.0
+    Commands:
+      - "give %player% diamond_helmet{Enchantments:[{id:protection,lvl:3}]} 1"
+      - "give %player% diamond_chestplate{Enchantments:[{id:protection,lvl:3}]} 1"
+      - "give %player% diamond_leggings{Enchantments:[{id:protection,lvl:3}]} 1"
+      - "give %player% diamond_boots{Enchantments:[{id:protection,lvl:3}]} 1"
+    Firework: true
+  
+  "8":
+    DisplayName: "<gold>⛏️ 钻石工具套装</gold>"
+    DisplayItem: "diamond_pickaxe"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>获得钻石工具套装"
+      - "<gold>史诗奖励</gold>"
+      - "<yellow>效率 IV | 耐久 III</yellow>"
+    Weight: 4.0
+    Commands:
+      - "give %player% diamond_pickaxe{Enchantments:[{id:efficiency,lvl:4},{id:unbreaking,lvl:3}]} 1"
+      - "give %player% diamond_axe{Enchantments:[{id:efficiency,lvl:4},{id:unbreaking,lvl:3}]} 1"
+      - "give %player% diamond_shovel{Enchantments:[{id:efficiency,lvl:4},{id:unbreaking,lvl:3}]} 1"
+    Firework: true
+  
+  # ========== 传说奖品 - 100抽保底 ==========
+  "9":
+    DisplayName: "<red>👑 下界之星</red>"
+    DisplayItem: "nether_star"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>获得 1 个下界之星"
+      - "<red>传说奖励 - 100抽保底</red>"
+      - "<gold>超级稀有！</gold>"
+    Weight: 1.0
+    Guaranteed: true
+    GuaranteedCount: 100
+    Items:
+      - "Item:nether_star, Amount:1"
+    Firework: true
+    Settings:
+      Broadcast:
+        Toggle: true
+        Messages:
+          - "<gold>恭喜 %player% 抽到了传说奖品：下界之星！</gold>"
+  
+  "10":
+    DisplayName: "<red>🌟 信标</red>"
+    DisplayItem: "beacon"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>获得 1 个信标"
+      - "<red>传说奖励 - 100抽保底</red>"
+      - "<gold>超级稀有！</gold>"
+    Weight: 0.5
+    Guaranteed: true
+    GuaranteedCount: 100
+    Items:
+      - "Item:beacon, Amount:1"
+    Firework: true
+    Settings:
+      Broadcast:
+        Toggle: true
+        Messages:
+          - "<gold>恭喜 %player% 抽到了传说奖品：信标！</gold>"
+
+# ==========================================
+# 使用说明
+# ==========================================
+# 单抽：右键点击箱子
+# 五连抽：Shift + 右键点击箱子（需要5把钥匙）
+# 
+# 保底系统：
+# - 100抽必出传说奖品（下界之星或信标）
+# 
+# PlaceholderAPI 变量：
+# %crazycrates_RandomBox_pity_count%  - 保底计数
+# ==========================================

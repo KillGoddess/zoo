@@ -1,0 +1,368 @@
+# ==========================================
+# RandomBox 完整示例配置
+# ==========================================
+# 版本: v5.0.14
+# 特性: 传送带式动画 + 原神式多层保底 + 五连抽
+# ==========================================
+
+Crate:
+  CrateType: RandomBox
+  CrateName: "<gradient:#ff6b6b:#4ecdc4>✨ 原神宝箱 ✨</gradient>"
+  
+  # 预览设置
+  Preview:
+    Toggle: true
+    Rows: 6
+    Glass:
+      Toggle: true
+      Name: " "
+      Item: "gray_stained_glass_pane"
+  
+  # ==========================================
+  # 原神式多层保底系统
+  # ==========================================
+  # 10抽紫色保底、50抽金色保底、90抽传说保底
+  # ==========================================
+  Pity:
+    # 3星保底（蓝色）- 每5抽必出
+    Uncommon:
+      Rarity: "uncommon"
+      Count: 5
+      DisplayName: "<blue>3星保底</blue>"
+    
+    # 4星保底（紫色）- 每10抽必出
+    Rare:
+      Rarity: "rare"
+      Count: 10
+      DisplayName: "<light_purple>4星保底</light_purple>"
+    
+    # 5星保底（金色）- 每90抽必出
+    Legendary:
+      Rarity: "legendary"
+      Count: 90
+      DisplayName: "<gold>5星保底</gold>"
+  
+  # 物理钥匙配置
+  PhysicalKey:
+    Name: "<gradient:#ff6b6b:#4ecdc4>原神宝箱钥匙</gradient>"
+    Lore:
+      - "<gray>使用此钥匙打开原神宝箱"
+      - ""
+      - "<aqua>✨ 保底系统 ✨"
+      - "<blue>  • 5抽必出3星</blue>"
+      - "<light_purple>  • 10抽必出4星</light_purple>"
+      - "<gold>  • 90抽必出5星</gold>"
+      - ""
+      - "<yellow>💡 小提示："
+      - "<gray>  • 右键点击箱子 = 单抽"
+      - "<gray>  • Shift + 右键 = 五连抽"
+      - ""
+      - "<green>祝你好运！</green>"
+    item: "tripwire_hook"
+    glowing: true
+    Custom-Model-Data: ""
+
+# ==========================================
+# 奖品配置
+# ==========================================
+# 稀有度说明：
+# - common: 2星（白色）- 基础奖励
+# - uncommon: 3星（蓝色）- 5抽保底
+# - rare: 4星（紫色）- 10抽保底
+# - legendary: 5星（金色）- 90抽保底
+# ==========================================
+
+Prizes:
+  # ========================================
+  # 2星奖品（白色）- 基础奖励
+  # ========================================
+  "1":
+    DisplayName: "<white>⭐⭐ 旅行者的面包</white>"
+    DisplayItem: "bread"
+    DisplayAmount: 16
+    DisplayLore:
+      - "<gray>基础食物补给"
+      - "<white>2星 | 普通</white>"
+      - ""
+      - "<gray>获得 16 个面包"
+    Rarity: "common"
+    Weight: 35.0
+    Items:
+      - "Item:bread, Amount:16"
+  
+  "2":
+    DisplayName: "<white>⭐⭐ 冒险家的干粮</white>"
+    DisplayItem: "cooked_beef"
+    DisplayAmount: 16
+    DisplayLore:
+      - "<gray>基础食物补给"
+      - "<white>2星 | 普通</white>"
+      - ""
+      - "<gray>获得 16 个熟牛肉"
+    Rarity: "common"
+    Weight: 30.0
+    Items:
+      - "Item:cooked_beef, Amount:16"
+  
+  "3":
+    DisplayName: "<white>⭐⭐ 木制工具套装</white>"
+    DisplayItem: "wooden_pickaxe"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>新手工具"
+      - "<white>2星 | 普通</white>"
+      - ""
+      - "<gray>获得木制工具套装"
+    Rarity: "common"
+    Weight: 25.0
+    Commands:
+      - "give %player% wooden_pickaxe 1"
+      - "give %player% wooden_axe 1"
+      - "give %player% wooden_shovel 1"
+  
+  # ========================================
+  # 3星奖品（蓝色）- 5抽保底
+  # ========================================
+  "4":
+    DisplayName: "<blue>⭐⭐⭐ 冒险家的指南针</blue>"
+    DisplayItem: "compass"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>实用工具"
+      - "<blue>3星 | 优秀 | 5抽保底</blue>"
+      - ""
+      - "<gray>获得 1 个指南针"
+    Rarity: "uncommon"
+    Weight: 20.0
+    Items:
+      - "Item:compass, Amount:1"
+  
+  "5":
+    DisplayName: "<blue>⭐⭐⭐ 铁制工具套装</blue>"
+    DisplayItem: "iron_pickaxe"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>进阶工具"
+      - "<blue>3星 | 优秀 | 5抽保底</blue>"
+      - ""
+      - "<gray>获得铁制工具套装"
+    Rarity: "uncommon"
+    Weight: 18.0
+    Commands:
+      - "give %player% iron_pickaxe 1"
+      - "give %player% iron_axe 1"
+      - "give %player% iron_shovel 1"
+  
+  "6":
+    DisplayName: "<blue>⭐⭐⭐ 末影珍珠包</blue>"
+    DisplayItem: "ender_pearl"
+    DisplayAmount: 8
+    DisplayLore:
+      - "<gray>传送道具"
+      - "<blue>3星 | 优秀 | 5抽保底</blue>"
+      - ""
+      - "<gray>获得 8 个末影珍珠"
+    Rarity: "uncommon"
+    Weight: 15.0
+    Items:
+      - "Item:ender_pearl, Amount:8"
+  
+  # ========================================
+  # 4星奖品（紫色）- 10抽保底
+  # ========================================
+  "7":
+    DisplayName: "<light_purple>⭐⭐⭐⭐ 紫水晶之心</light_purple>"
+    DisplayItem: "amethyst_shard"
+    DisplayAmount: 32
+    DisplayLore:
+      - "<gray>稀有材料"
+      - "<light_purple>4星 | 稀有 | 10抽保底</light_purple>"
+      - ""
+      - "<gray>获得 32 个紫水晶碎片"
+      - "<yellow>可用于合成高级装备</yellow>"
+    Rarity: "rare"
+    Weight: 12.0
+    Items:
+      - "Item:amethyst_shard, Amount:32"
+    Firework: true
+  
+  "8":
+    DisplayName: "<light_purple>⭐⭐⭐⭐ 钻石工具套装</light_purple>"
+    DisplayItem: "diamond_pickaxe"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>高级工具"
+      - "<light_purple>4星 | 稀有 | 10抽保底</light_purple>"
+      - ""
+      - "<gray>获得钻石工具套装"
+      - "<yellow>效率 III | 耐久 III</yellow>"
+    Rarity: "rare"
+    Weight: 10.0
+    Commands:
+      - "give %player% diamond_pickaxe{Enchantments:[{id:efficiency,lvl:3},{id:unbreaking,lvl:3}]} 1"
+      - "give %player% diamond_axe{Enchantments:[{id:efficiency,lvl:3},{id:unbreaking,lvl:3}]} 1"
+      - "give %player% diamond_shovel{Enchantments:[{id:efficiency,lvl:3},{id:unbreaking,lvl:3}]} 1"
+    Firework: true
+  
+  "9":
+    DisplayName: "<light_purple>⭐⭐⭐⭐ 附魔钻石剑</light_purple>"
+    DisplayItem: "diamond_sword"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>强力武器"
+      - "<light_purple>4星 | 稀有 | 10抽保底</light_purple>"
+      - ""
+      - "<gray>获得附魔钻石剑"
+      - "<yellow>锋利 IV | 击退 II</yellow>"
+      - "<yellow>抢夺 II</yellow>"
+    Rarity: "rare"
+    Weight: 8.0
+    Commands:
+      - "give %player% diamond_sword{Enchantments:[{id:sharpness,lvl:4},{id:knockback,lvl:2},{id:looting,lvl:2}]} 1"
+    Firework: true
+  
+  "10":
+    DisplayName: "<light_purple>⭐⭐⭐⭐ 钻石护甲套装</light_purple>"
+    DisplayItem: "diamond_chestplate"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>防护装备"
+      - "<light_purple>4星 | 稀有 | 10抽保底</light_purple>"
+      - ""
+      - "<gray>获得全套钻石护甲"
+      - "<yellow>保护 III | 耐久 III</yellow>"
+    Rarity: "rare"
+    Weight: 7.0
+    Commands:
+      - "give %player% diamond_helmet{Enchantments:[{id:protection,lvl:3},{id:unbreaking,lvl:3}]} 1"
+      - "give %player% diamond_chestplate{Enchantments:[{id:protection,lvl:3},{id:unbreaking,lvl:3}]} 1"
+      - "give %player% diamond_leggings{Enchantments:[{id:protection,lvl:3},{id:unbreaking,lvl:3}]} 1"
+      - "give %player% diamond_boots{Enchantments:[{id:protection,lvl:3},{id:unbreaking,lvl:3}]} 1"
+    Firework: true
+  
+  # ========================================
+  # 5星奖品（金色）- 90抽保底
+  # ========================================
+  "11":
+    DisplayName: "<gold>⭐⭐⭐⭐⭐ 下界之星</gold>"
+    DisplayItem: "nether_star"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>传说材料"
+      - "<gold>5星 | 传说 | 90抽保底</gold>"
+      - ""
+      - "<gray>获得 1 个下界之星"
+      - "<yellow>可用于合成信标</yellow>"
+      - "<red>超级稀有！</red>"
+    Rarity: "legendary"
+    Weight: 2.0
+    Items:
+      - "Item:nether_star, Amount:1"
+    Firework: true
+    Settings:
+      Broadcast:
+        Toggle: true
+        Messages:
+          - "<gold>========================================</gold>"
+          - "<gold>✨ 恭喜 %player% 抽到了 5星传说奖品！✨</gold>"
+          - "<yellow>奖品：下界之星</yellow>"
+          - "<gold>========================================</gold>"
+  
+  "12":
+    DisplayName: "<gold>⭐⭐⭐⭐⭐ 信标</gold>"
+    DisplayItem: "beacon"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>传说建筑"
+      - "<gold>5星 | 传说 | 90抽保底</gold>"
+      - ""
+      - "<gray>获得 1 个信标"
+      - "<yellow>提供强大的增益效果</yellow>"
+      - "<red>超级稀有！</red>"
+    Rarity: "legendary"
+    Weight: 1.5
+    Items:
+      - "Item:beacon, Amount:1"
+    Firework: true
+    Settings:
+      Broadcast:
+        Toggle: true
+        Messages:
+          - "<gold>========================================</gold>"
+          - "<gold>✨ 恭喜 %player% 抽到了 5星传说奖品！✨</gold>"
+          - "<yellow>奖品：信标</yellow>"
+          - "<gold>========================================</gold>"
+  
+  "13":
+    DisplayName: "<gold>⭐⭐⭐⭐⭐ 附魔金苹果</gold>"
+    DisplayItem: "enchanted_golden_apple"
+    DisplayAmount: 3
+    DisplayLore:
+      - "<gray>传说食物"
+      - "<gold>5星 | 传说 | 90抽保底</gold>"
+      - ""
+      - "<gray>获得 3 个附魔金苹果"
+      - "<yellow>提供强大的生命恢复</yellow>"
+      - "<red>超级稀有！</red>"
+    Rarity: "legendary"
+    Weight: 1.0
+    Items:
+      - "Item:enchanted_golden_apple, Amount:3"
+    Firework: true
+    Settings:
+      Broadcast:
+        Toggle: true
+        Messages:
+          - "<gold>========================================</gold>"
+          - "<gold>✨ 恭喜 %player% 抽到了 5星传说奖品！✨</gold>"
+          - "<yellow>奖品：附魔金苹果 x3</yellow>"
+          - "<gold>========================================</gold>"
+  
+  "14":
+    DisplayName: "<gold>⭐⭐⭐⭐⭐ 下界合金套装</gold>"
+    DisplayItem: "netherite_chestplate"
+    DisplayAmount: 1
+    DisplayLore:
+      - "<gray>终极装备"
+      - "<gold>5星 | 传说 | 90抽保底</gold>"
+      - ""
+      - "<gray>获得全套下界合金装备"
+      - "<yellow>保护 IV | 耐久 III</yellow>"
+      - "<yellow>荆棘 II</yellow>"
+      - "<red>超级稀有！</red>"
+    Rarity: "legendary"
+    Weight: 0.5
+    Commands:
+      - "give %player% netherite_helmet{Enchantments:[{id:protection,lvl:4},{id:unbreaking,lvl:3},{id:thorns,lvl:2}]} 1"
+      - "give %player% netherite_chestplate{Enchantments:[{id:protection,lvl:4},{id:unbreaking,lvl:3},{id:thorns,lvl:2}]} 1"
+      - "give %player% netherite_leggings{Enchantments:[{id:protection,lvl:4},{id:unbreaking,lvl:3},{id:thorns,lvl:2}]} 1"
+      - "give %player% netherite_boots{Enchantments:[{id:protection,lvl:4},{id:unbreaking,lvl:3},{id:thorns,lvl:2}]} 1"
+      - "give %player% netherite_sword{Enchantments:[{id:sharpness,lvl:5},{id:looting,lvl:3},{id:unbreaking,lvl:3}]} 1"
+    Firework: true
+    Settings:
+      Broadcast:
+        Toggle: true
+        Messages:
+          - "<gold>========================================</gold>"
+          - "<gold>✨ 恭喜 %player% 抽到了 5星传说奖品！✨</gold>"
+          - "<yellow>奖品：下界合金套装</yellow>"
+          - "<red>这是最稀有的奖品！</red>"
+          - "<gold>========================================</gold>"
+
+# ==========================================
+# 使用说明
+# ==========================================
+# 1. 单抽：右键点击箱子
+# 2. 五连抽：Shift + 右键点击箱子（需要5把钥匙）
+# 3. 保底系统：
+#    - 5抽必出3星（蓝色）
+#    - 10抽必出4星（紫色）
+#    - 90抽必出5星（金色）
+# 4. 保底继承：未触发的保底次数会累积
+# 5. 智能重置：抽到高星时会重置低星保底
+# ==========================================
+# PlaceholderAPI 变量：
+# %crazycrates_RandomBox_pity_uncommon%   - 3星保底计数
+# %crazycrates_RandomBox_pity_rare%       - 4星保底计数
+# %crazycrates_RandomBox_pity_legendary%  - 5星保底计数
+# ==========================================
